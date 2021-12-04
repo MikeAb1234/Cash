@@ -1,0 +1,38 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        Scanner changedue = new Scanner(System.in);
+        int centcounter = 0;
+        float change;
+        do {
+            System.out.println("How much change?: ");
+            change = changedue.nextFloat();
+        }while (change <= 0.00);
+
+        int cents = Math.round(change * 100);
+
+        while (cents >= 25)
+        { centcounter++;
+            cents -= 25;
+        }
+        while (cents >= 10)
+        { centcounter++;
+            cents -= 10;
+        }
+        while (cents >= 5)
+        { centcounter++;
+            cents -= 5;
+        }
+        while (cents >= 1)
+        { centcounter++;
+            cents -= 1;
+        }
+        
+        System.out.println( "Coins due: " + centcounter);
+    }
+}
